@@ -1,0 +1,74 @@
+<HTML !DOCTYPE html>
+    <head>
+        <title>Js Rendering Engine</title>
+        <link rel="icon" type="image/x-icon" href="./favicon.svg">
+
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Varela+Round&display=swap');
+            
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+            body {
+                width: 100dvw;
+                height: 100dvh;
+                background: black;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .mainCanvas {
+                width: 100%;
+                height: 100%;
+            }
+
+            .playButton {
+                width: auto;
+                height: fit-content;
+                font-size: 10cqmin;
+                cursor: not-allowed;
+                position: absolute;
+                background-color: white;
+                padding: 2cqmin;
+                box-sizing: border-box;
+                border-radius: 5cqmin;
+
+                transition: transform 0.25s cubic-bezier(0.5, 1, 0.89, 1), filter 0.25s cubic-bezier(0.5, 1, 0.89, 1);
+            }
+            .playButton.enabled {
+                cursor: pointer;
+            }
+            .playButton.enabled:hover {
+                transform: scale(1.1);
+                filter: drop-shadow(0 0 0.5cqmin #ffffff);
+            }
+            .playButton.starting {
+                pointer-events: none;
+                opacity: 0;
+                animation-name: buttonStart;
+                animation-duration: 1s;
+                animation-timing-function: linear;
+            }
+
+            @keyframes buttonStart {
+                0% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- play button -->
+        <button id="playButton" class="playButton enabled">Start</button>
+
+        <!-- main canvas -->
+        <canvas class="mainCanvas" id="mainCanvas" width="100" height="100"></canvas>
+
+        <script src="./canvas.js"></script>
+    </body>
+</HTML>
