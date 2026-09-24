@@ -71,6 +71,8 @@ async function frame(currentTime) {
     drawObject({ strokeColor: "black", type: "text", color: "white", text: `${fpsAve} fps`, x: "align:0:1", y: "align:0:1", fontSize: 6, fontFamily: "Varela Round", fontWeight: 400, effectedByCamera: false });
     drawObject({ strokeColor: "black", type: "text", color: "white", text: `${Math.floor(camera.zoom*10000)/10000}x zoom`, x: "align:0:1", y: "align:0:7", fontSize: 6, fontFamily: "Varela Round", fontWeight: 400, effectedByCamera: false });
     drawObject({ strokeColor: "black", type: "text", color: "white", text: `x: ${Math.floor(camera.x*10)/10} y: ${Math.floor(camera.y*10)/10}`, x: "align:0:1", y: "align:0:14", fontSize: 6, fontFamily: "Varela Round", fontWeight: 400, effectedByCamera: false });
+    drawObject({ type: "line", strokeColor: "black", lineWidth: 0.75, effectedByCamera: false, polygonData: [[0, 10], [0, -10]] });
+    drawObject({ type: "line", strokeColor: "black", lineWidth: 0.75, effectedByCamera: false, polygonData: [[-10, 0], [10, 0]] });
     
     // restart loop
     requestAnimationFrame(frame);
