@@ -71,8 +71,8 @@ async function frame(currentTime) {
     drawObject({ strokeColor: "black", type: "text", color: "white", text: `${fpsAve} fps`, x: "align:0:1", y: "align:0:1", fontSize: 6, fontFamily: "Varela Round", fontWeight: 400, effectedByCamera: false });
     drawObject({ strokeColor: "black", type: "text", color: "white", text: `${Math.floor(camera.zoom*10000)/10000}x zoom`, x: "align:0:1", y: "align:0:7", fontSize: 6, fontFamily: "Varela Round", fontWeight: 400, effectedByCamera: false });
     drawObject({ strokeColor: "black", type: "text", color: "white", text: `x: ${Math.floor(camera.x*10)/10} y: ${Math.floor(camera.y*10)/10}`, x: "align:0:1", y: "align:0:14", fontSize: 6, fontFamily: "Varela Round", fontWeight: 400, effectedByCamera: false });
-    drawObject({ type: "line", strokeColor: "#0000007f", lineWidth: 0.75, effectedByCamera: false, polygonData: [[0, 5], [0, -5]], x: "section:1/2:0", y: "section:1/2:0" });
-    drawObject({ type: "line", strokeColor: "#0000007f", lineWidth: 0.75, effectedByCamera: false, polygonData: [[-5, 0], [5, 0]], x: "section:1/2:0", y: "section:1/2:0" });
+    drawObject({ rotation: rot, type: "line", strokeColor: "#0000007f", lineWidth: 0.75, effectedByCamera: false, polygonData: [[0, 5], [0, -5]], x: "section:1/2:0", y: "section:1/2:0" });
+    drawObject({ rotation: rot, type: "line", strokeColor: "#0000007f", lineWidth: 0.75, effectedByCamera: false, polygonData: [[-5, 0], [5, 0]], x: "section:1/2:0", y: "section:1/2:0" });
     
     // restart loop
     requestAnimationFrame(frame);
